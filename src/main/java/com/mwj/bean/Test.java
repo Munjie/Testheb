@@ -59,7 +59,7 @@ public class Test {
         transaction.commit();
         System.out.println(save);
 
-        System.out.println("********************************删除********************************");
+        System.out.println("********************************删除id********************************");
         staff1.setMyinitial("8");
          session.delete(staff1);
         session.close();
