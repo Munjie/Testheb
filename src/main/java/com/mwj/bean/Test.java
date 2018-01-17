@@ -50,23 +50,36 @@ public class Test {
         Query query3 = session.createQuery(sql3);
         List list2 = query3.list();
         list2.forEach((e) -> System.out.println(e) );
-        System.out.println("********************************增加********************************");
-         Staff staff1 = new Staff();
-        staff1.setMyinitial("456889");
-        Serializable save = session.save(staff1);
-        //开启事务
-        Transaction transaction = session.beginTransaction();
-        transaction.commit();
-        System.out.println(save);
-
-        System.out.println("********************************删除id********************************");
-        staff1.setMyinitial("8");
-         session.delete(staff1);
-        session.close();
-        sessionFactory.close();
 
 
-
+        Test.add(session);
 
     }
+
+    public static  void  delete(Session session){
+        System.out.println("********************************删除id********************************");
+        Staff staff = new Staff();
+        staff.setMyinitial("8");
+        session.delete(staff);
+        Transaction transaction1 = session.beginTransaction();
+        transaction1.commit();
+        session.close();
+    }
+    public static  void  add(Session session){
+        Staff staff = new Staff();
+        staff.setMyinitial("101");
+        Serializable save = session.save(staff);
+        Transaction transaction = session.beginTransaction();
+        transaction.commit();
+
+    }
+
+    public static  void  update(Session session) {
+        Staff staff = new Staff();
+        staff.setMyinitial("7758");
+          session.update(staff);
+        Transaction transaction = session.beginTransaction();
+        transaction.commit();
+    }
+
 }
