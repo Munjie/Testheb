@@ -14,6 +14,7 @@ public class Test {
         SessionFactory sessionFactory = configure.buildSessionFactory();
         Session session = sessionFactory.openSession();
 
+        //查询
         Staff staff = session.get(Staff.class, "88");
         System.out.println(staff);
 
