@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.mwj.bean.Staff" table="STAFF" schema="SCOTT">
+        <id name="myinitial" column="MYINITIAL"/>
+        <property name="staffname" column="STAFFNAME"/>
+        <property name="password" column="PASSWORD"/>
+        <property name="depname" column="DEPNAME"/>
+        <property name="mail" column="MAIL"/>
+        <property name="joindate" column="JOINDATE"/>
+        <property name="telephone" column="TELEPHONE"/>
+        <property name="gender" column="GENDER"/>
+        <property name="isadmin" column="ISADMIN"/>
+        <property name="deleted" column="DELETED"/>
+    </class>
+</hibernate-mapping>
