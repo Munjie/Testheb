@@ -51,8 +51,11 @@ public class Test {
         List list2 = query3.list();
         list2.forEach((e) -> System.out.println(e) );
 
+        Emp emp = session.get(Emp.class, (long) 7499);
+        System.out.println(emp.getDept().getDname());
 
-        Test.add(session);
+
+       // Test.add(session);
 
     }
 
